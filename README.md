@@ -1,4 +1,4 @@
-#[Utilizing `react-native-fast-image` for Enhanced Image Loading](https://medium.com/@rosingh3342/utilizing-react-native-fast-image-for-enhanced-image-loading-633c0172afef)
+#Utilizing `react-native-fast-image` for Enhanced Image Loading
 
 Images are a fundamental part of modern mobile app design, and efficient image loading is crucial for delivering a smooth user experience. React Native developers often face challenges related to image loading performance, placeholder display during loading, and error handling. The `react-native-fast-image` library comes to the rescue, offering enhanced image-loading capabilities and features that address these challenges.
 
@@ -192,3 +192,5 @@ By following the techniques and examples provided in this article, you'll be wel
 Happy coding!
 
 Feel free to adapt the code examples and strategies to your specific use cases. `react-native-fast-image` offers a comprehensive set of features for optimizing image loading in React Native apps, and the provided examples aim to help you make the most of its capabilities.
+
+[Medium Article](https://medium.com/@rosingh3342/utilizing-react-native-fast-image-for-enhanced-image-loading-633c0172afef)
