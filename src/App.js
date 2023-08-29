@@ -4,13 +4,16 @@ import {
   StyleSheet,
   SafeAreaView,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import React, { useState } from 'react';
 import FastImage from 'react-native-fast-image';
 
 const App = () => {
   const [isLoading, setLoading] = useState(true);
-  const [imageUri, setImageUri] = useState('https:');
+  const [imageUri, setImageUri] = useState(
+    'https://source.unsplash.com/random/3840x2160/?cars'
+  );
   const [errorMessage, setErrorMessage] = useState(null);
 
   function onLoadStart() {
@@ -19,11 +22,17 @@ const App = () => {
   }
 
   function onLoadEnd() {
-    setLoading(false);
+    // using setTimeout to increase the image load time
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   }
 
   function onError() {
-    setLoading(false);
+    // using setTimeout to increase the image load time
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
     setErrorMessage(true);
   }
 
@@ -47,6 +56,9 @@ const App = () => {
           resizeMode={FastImage.resizeMode.cover}
           defaultSource={require('../assets/defaultImage.jpeg')}
         />
+        {isLoading && (
+          <ActivityIndicator style={styles.loaderStyle} size={'large'} />
+        )}
       </View>
       <Text style={styles.textStyle}>
         {isLoading
@@ -84,6 +96,13 @@ const styles = StyleSheet.create({
   fastImageStyle: {
     width: '100%',
     height: '100%',
+  },
+  loaderStyle: {
+    zIndex: 1,
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    backgroundColor: 'white',
   },
   textStyle: {
     fontSize: 16,
